@@ -231,6 +231,8 @@ body.dark-mode .gacha-stage{background:#2a2010;border-color:#ff8a3d}
 .fcd .fcd-dot{position:absolute;bottom:3px;left:4px;font-size:9px;z-index:2}
 .fcd.has-log:not(.has-photo){background:#ffe8a8}
 .streak-card{background:linear-gradient(135deg,#fff3d0,#ffe8a8);border:1px solid #f0d090;border-radius:12px;padding:12px 14px;margin-top:12px;display:flex;align-items:center;gap:10px}
+.streak-text{color:#5a3a1a;font-size:13px}
+.streak-sub{font-size:11px;color:#a87a3a;margin-top:2px}
 .streak-num{font-size:22px}
 .food-log-item{display:flex;gap:10px;align-items:center;padding:10px 4px;border-bottom:1px solid #f5f0ea;cursor:pointer}
 .food-log-item:last-child{border-bottom:none}
@@ -279,6 +281,8 @@ body.dark-mode .sort-select{background:#232323;border-color:#3a3a3a;color:#999}
 body.dark-mode .month-pick-card{background:linear-gradient(135deg,#3a2a18,#3a2510);border-color:#5a3a1a}
 body.dark-mode .month-pick-emoji{background:#1c1c1c}
 body.dark-mode .month-pick-name{color:#eee}
+body.dark-mode .month-pick-label{color:#ffb85a}
+body.dark-mode .month-pick-sub{color:#e0b078}
 body.dark-mode .modal-box{background:#232323;color:#e8e8e8}
 body.dark-mode .modal-box h3{color:#eee}
 body.dark-mode .modal-close-btn{background:none;border-color:#3a3a3a;color:#888}
@@ -293,6 +297,8 @@ body.dark-mode .fcd-dow{color:#8a7060}
 body.dark-mode .fcd{background:#232323;border-color:#3a3a3a}
 body.dark-mode .fcd.has-log:not(.has-photo){background:#3a2a18}
 body.dark-mode .streak-card{background:linear-gradient(135deg,#3a2a18,#3a2510);border-color:#5a3a1a}
+body.dark-mode .streak-text{color:#f0d0a0}
+body.dark-mode .streak-sub{color:#e0b078}
 body.dark-mode .food-log-item{border-bottom-color:#333}
 body.dark-mode .fli-thumb{background:#1c1c1c}
 body.dark-mode .fli-name{color:#eee}
@@ -1467,9 +1473,9 @@ function renderFoodStreak(){
   var cookedCount=foodLog.filter(function(f){return f.type==='cooked';}).length;
   var deliveryCount=foodLog.filter(function(f){return f.type==='delivery';}).length;
   if(streak>=1){
-    card.innerHTML='<span class="streak-num">🔥</span><div><b>'+streak+'일 연속</b> 식사 기록 중이에요<div style="font-size:11px;color:#a87a3a;margin-top:2px">집밥 '+cookedCount+'번 · 배달 '+deliveryCount+'번</div></div>';
+    card.innerHTML='<span class="streak-num">🔥</span><div class="streak-text"><b>'+streak+'일 연속</b> 식사 기록 중이에요<div class="streak-sub">집밥 '+cookedCount+'번 · 배달 '+deliveryCount+'번</div></div>';
   } else {
-    card.innerHTML='<span class="streak-num">🍽️</span><div><b>오늘 뭐 먹었는지</b> 기록해보세요<div style="font-size:11px;color:#a87a3a;margin-top:2px">집밥 '+cookedCount+'번 · 배달 '+deliveryCount+'번</div></div>';
+    card.innerHTML='<span class="streak-num">🍽️</span><div class="streak-text"><b>오늘 뭐 먹었는지</b> 기록해보세요<div class="streak-sub">집밥 '+cookedCount+'번 · 배달 '+deliveryCount+'번</div></div>';
   }
 }
 
